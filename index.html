@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Study Videos</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00ffcc;
+    }
+
+    .filter {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    select {
+      padding: 10px 16px;
+      font-size: 16px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    select:hover {
+      background-color: #444;
+      transform: scale(1.05);
+    }
+
+    .subject {
+      margin-bottom: 40px;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .subject h2 {
+      color: #00ffaa;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 5px;
+    }
+
+    .videos a {
+      display: inline-block;
+      margin: 6px;
+      padding: 10px 14px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    .videos a:hover {
+      background-color: #00ffcc;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Study Video Library By RS</h1>
+
+  <div class="filter">
+    <label for="subjectFilter">📚 Filter by Subject: </label>
+    <select id="subjectFilter">
+      <option value="all">All Subjects</option>
+      <option value="biology">Biology</option>
+      <option value="ict">ICT</option>
+      <option value="math">Math</option>
+      <option value="phyics">Physics</option>
+    </select>
+  </div>
+
+  <div class="subject biology">
+    <h2>Biology</h2>
+    <div class="videos">
+      <a href="https://youtu.be/E2-pO3iXSqg" target="_blank">Chapter 2 Class 1</a>
+      <a href="http://youtu.be/CsavFdjEJyc" target="_blank">Chapter 2 Class 2</a>
+      <a href="https://youtu.be/2CwYW4tWPWk" target="_blank">Chapter 2 Class 3</a>
+      <a href="http://youtu.be/8Y1xjZc7zVA" target="_blank">Chapter 2 Class 4</a>
+      <a href="http://youtu.be/pwKKU9T14zc" target="_blank">Chapter 2 Class 5</a>
+      <a href="http://youtu.be/1yg6CXzDW0o" target="_blank">Chapter 2 Class 6</a>
+      <a href="http://youtu.be/hIGkUSMXBxI" target="_blank">Chapter 1 Class 7</a>
+    </div>
+  </div>
+
+  <div class="subject ict">
+    <h2>ICT</h2>
+    <div class="videos">
+      <a href="http://youtu.be/-mBir7DjGKQ" target="_blank">Chapter 5 Class 1</a>
+      <a href="http://youtu.be/H6BH4a0iQW0" target="_blank">Chapter 2 Class 1</a>
+      <a href="http://youtu.be/BpF3LFa8MbQ" target="_blank">Chapter 2 Class 1</a>
+      <a href="http://youtu.be/im_q5_3OJSY" target="_blank">Chapter 2 Class 1</a>
+    </div>
+  </div>
+
+  <div class="subject math">
+    <h2>Math</h2>
+    <div class="videos">
+      <a href="https://www.youtube.com/live/e92Eebje--0?si=ZKykZ8SIC3hHHxKg" target="_blank">Chapter 2 Class 1</a>
+      <a href="https://www.youtube.com/live/2JMkw4T4ncc?si=NpLmacIAd8HZYrkH" target="_blank">Chapter 2 Class 2</a>
+      <a href="https://www.youtube.com/watch?v=HlMw09Bgpwk&t=271s&ab_channel=ClassRoom5" target="_blank">Chapter 2 Class 3</a>
+      <a href="https://www.youtube.com/live/oKuzKhuXDdQ?si=BAfCdbpRol2sDRzV" target="_blank">Chapter 2 Class 4</a>
+      <a href="https://www.youtube.com/live/F7-JU-HH3fU?si=6t4avuYbA8tyIAlM" target="_blank">Chapter 2 Class 5</a>
+    </div>
+  </div>
+
+  <div class="subject physics">
+    <h2>Physics</h2>
+    <div class="videos">
+      <a href="http://youtu.be/0RxvaKov_00" target="_blank">Chapter 2 Class 1</a>
+      <a href="http://youtu.be/XHQxQyKyN1M" target="_blank">Chapter 2 Class 2</a>
+      <a href="https://youtu.be/2CwYW4tWPWk" target="_blank">Chapter 2 Class 3</a>
+      <a href="http://youtu.be/zD14nzvEQOs" target="_blank">Chapter 2 Class 4</a>
+      <a href="http://youtu.be/z4ICecRaGmY" target="_blank">Chapter 2 Class 5</a>
+      <a href="http://youtu.be/Kvc2IcZgUp4" target="_blank">Chapter 2 Class 6</a>
+    </div>
+  </div>
+
+
+  <script>
+    const filter = document.getElementById('subjectFilter');
+    const subjects = document.querySelectorAll('.subject');
+
+    filter.addEventListener('change', () => {
+      const value = filter.value;
+
+      subjects.forEach(subject => {
+        if (value === 'all') {
+          subject.classList.remove('hidden');
+        } else {
+          subject.classList.toggle('hidden', !subject.classList.contains(value));
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
