@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Add this viewport meta tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Study Videos</title>
   <style>
     body {
@@ -9,16 +11,19 @@
       color: #f0f0f0;
       font-family: Arial, sans-serif;
       padding: 20px;
+      margin: 0;
     }
 
     h1 {
       text-align: center;
       color: #00ffcc;
+      font-size: 1.8rem; /* Responsive font size */
+      margin-top: 10px;
     }
 
     .filter {
       text-align: center;
-      margin: 30px 0;
+      margin: 20px 0;
     }
 
     select {
@@ -30,6 +35,8 @@
       border-radius: 5px;
       cursor: pointer;
       transition: all 0.3s ease;
+      width: 80%; /* Better for mobile */
+      max-width: 300px; /* But not too wide on desktop */
     }
 
     select:hover {
@@ -38,8 +45,8 @@
     }
 
     .subject {
-      margin-bottom: 40px;
-      padding: 20px;
+      margin-bottom: 30px;
+      padding: 15px;
       background-color: #1e1e1e;
       border-radius: 10px;
       transition: all 0.3s ease;
@@ -50,17 +57,29 @@
       margin-bottom: 10px;
       border-bottom: 1px solid #333;
       padding-bottom: 5px;
+      font-size: 1.4rem;
+    }
+
+    .videos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
     }
 
     .videos a {
       display: inline-block;
-      margin: 6px;
       padding: 10px 14px;
       background-color: #333;
       color: #fff;
       text-decoration: none;
       border-radius: 6px;
       transition: background-color 0.3s ease, transform 0.2s;
+      font-size: 0.9rem;
+      text-align: center;
+      flex-grow: 1;
+      max-width: 100%;
+      box-sizing: border-box;
     }
 
     .videos a:hover {
@@ -72,10 +91,34 @@
     .hidden {
       display: none;
     }
+
+    /* Mobile-specific styles */
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+      
+      h1 {
+        font-size: 1.5rem;
+      }
+      
+      .subject {
+        padding: 10px;
+      }
+      
+      .subject h2 {
+        font-size: 1.2rem;
+      }
+      
+      .videos a {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+      }
+    }
   </style>
 </head>
 <body>
-
+  <!-- Rest of your HTML remains the same -->
   <h1>Study Video Library By RS</h1>
 
   <div class="filter">
@@ -137,19 +180,18 @@
   </div>
 
   <div class="subject chemistry">
-  <h2>Chemistry</h2>
-  <div class="videos">
-    <a href="http://youtu.be/wdF85pvXw4w" target="_blank">Chapter 3 Class 1</a>
-    <a href="http://youtu.be/vMl51EFYM2w" target="_blank">Chapter 3 Class 2</a>
-    <a href="http://youtu.be/ocLxVhngc9M" target="_blank">Chapter 3 Class 3</a>
-    <a href="http://youtu.be/EhurxPFBDXk" target="_blank">Chapter 3 Class 4</a>
-    <a href="http://youtu.be/rhPez8shE6Q" target="_blank">Chapter 3 Class 5</a>
-    <a href="http://youtu.be/nU7n3t7OSrw" target="_blank">Chapter 3 Class 6</a>
-    <a href="http://youtu.be/-dn90cCwnhg" target="_blank">Chapter 4 Class 7</a>
-    <a href="http://youtu.be/3JdSiCoxCf" target="_blank">Chapter 4 Class 8</a>
+    <h2>Chemistry</h2>
+    <div class="videos">
+      <a href="http://youtu.be/wdF85pvXw4w" target="_blank">Chapter 3 Class 1</a>
+      <a href="http://youtu.be/vMl51EFYM2w" target="_blank">Chapter 3 Class 2</a>
+      <a href="http://youtu.be/ocLxVhngc9M" target="_blank">Chapter 3 Class 3</a>
+      <a href="http://youtu.be/EhurxPFBDXk" target="_blank">Chapter 3 Class 4</a>
+      <a href="http://youtu.be/rhPez8shE6Q" target="_blank">Chapter 3 Class 5</a>
+      <a href="http://youtu.be/nU7n3t7OSrw" target="_blank">Chapter 3 Class 6</a>
+      <a href="http://youtu.be/-dn90cCwnhg" target="_blank">Chapter 4 Class 7</a>
+      <a href="http://youtu.be/3JdSiCoxCf" target="_blank">Chapter 4 Class 8</a>
+    </div>
   </div>
-</div>
-
 
   <script>
     const filter = document.getElementById('subjectFilter');
@@ -167,6 +209,5 @@
       });
     });
   </script>
-
 </body>
 </html>
